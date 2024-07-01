@@ -1,0 +1,483 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 545
+  ClientWidth = 940
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 210
+    Top = 11
+    Width = 42
+    Height = 16
+    Caption = 'Label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Color: TLabel
+    Left = 210
+    Top = 92
+    Width = 25
+    Height = 13
+    Caption = 'Color'
+  end
+  object Label2: TLabel
+    Left = 291
+    Top = 92
+    Width = 6
+    Height = 13
+    Caption = 'X'
+  end
+  object Label3: TLabel
+    Left = 372
+    Top = 92
+    Width = 6
+    Height = 13
+    Caption = 'Y'
+  end
+  object lblGameWindow: TLabel
+    Left = 576
+    Top = 13
+    Width = 61
+    Height = 13
+    Caption = 'Nome jamela'
+  end
+  object Label4: TLabel
+    Left = 210
+    Top = 73
+    Width = 47
+    Height = 13
+    Caption = 'Heal life 1'
+  end
+  object Label5: TLabel
+    Left = 210
+    Top = 172
+    Width = 25
+    Height = 13
+    Caption = 'Color'
+  end
+  object Label6: TLabel
+    Left = 291
+    Top = 172
+    Width = 6
+    Height = 13
+    Caption = 'X'
+  end
+  object Label7: TLabel
+    Left = 372
+    Top = 172
+    Width = 6
+    Height = 13
+    Caption = 'Y'
+  end
+  object Label8: TLabel
+    Left = 210
+    Top = 153
+    Width = 47
+    Height = 13
+    Caption = 'Heal life 2'
+  end
+  object Label9: TLabel
+    Left = 453
+    Top = 92
+    Width = 46
+    Height = 13
+    Caption = 'Tecla HL1'
+  end
+  object Label10: TLabel
+    Left = 453
+    Top = 172
+    Width = 49
+    Height = 13
+    Caption = 'Tecla HL 2'
+  end
+  object Label11: TLabel
+    Left = 210
+    Top = 268
+    Width = 25
+    Height = 13
+    Caption = 'Color'
+  end
+  object Label12: TLabel
+    Left = 291
+    Top = 268
+    Width = 6
+    Height = 13
+    Caption = 'X'
+  end
+  object Label13: TLabel
+    Left = 372
+    Top = 268
+    Width = 6
+    Height = 13
+    Caption = 'Y'
+  end
+  object Label14: TLabel
+    Left = 210
+    Top = 249
+    Width = 59
+    Height = 13
+    Caption = 'Heal Mana 1'
+  end
+  object Label15: TLabel
+    Left = 453
+    Top = 268
+    Width = 52
+    Height = 13
+    Caption = 'Tecla HM 1'
+  end
+  object Label16: TLabel
+    Left = 32
+    Top = 364
+    Width = 76
+    Height = 13
+    Caption = 'Rota'#231#227'o Magias'
+  end
+  object Label17: TLabel
+    Left = 32
+    Top = 468
+    Width = 21
+    Height = 13
+    Caption = 'Loot'
+  end
+  object Label18: TLabel
+    Left = 31
+    Top = 388
+    Width = 23
+    Height = 13
+    Caption = 'Utito'
+  end
+  object Label19: TLabel
+    Left = 443
+    Top = 388
+    Width = 16
+    Height = 13
+    Caption = 'Atk'
+  end
+  object Memo1: TMemo
+    Left = 8
+    Top = 8
+    Width = 185
+    Height = 273
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 0
+  end
+  object SetarHL1: TBitBtn
+    Left = 586
+    Top = 109
+    Width = 75
+    Height = 25
+    Caption = 'Setar'
+    TabOrder = 1
+    OnClick = SetarHL1Click
+  end
+  object edtHL1Color: TEdit
+    Left = 210
+    Top = 111
+    Width = 75
+    Height = 21
+    TabOrder = 2
+  end
+  object edtHL1X: TEdit
+    Left = 291
+    Top = 111
+    Width = 75
+    Height = 21
+    TabOrder = 3
+  end
+  object edtHL1Y: TEdit
+    Left = 372
+    Top = 111
+    Width = 75
+    Height = 21
+    TabOrder = 4
+  end
+  object chkAtivo: TCheckBox
+    Left = 210
+    Top = 33
+    Width = 97
+    Height = 17
+    Caption = 'Ativo'
+    TabOrder = 5
+    OnClick = chkAtivoClick
+  end
+  object BitBtn1: TBitBtn
+    Left = 792
+    Top = 78
+    Width = 75
+    Height = 25
+    Caption = 'BitBtn1'
+    TabOrder = 6
+  end
+  object edtGameWindow: TEdit
+    Left = 576
+    Top = 32
+    Width = 121
+    Height = 21
+    TabOrder = 7
+    Text = 'Tibia - '
+  end
+  object Edit1: TEdit
+    Left = 792
+    Top = 140
+    Width = 121
+    Height = 21
+    TabOrder = 8
+    Text = 'Edit1'
+  end
+  object BitBtn2: TBitBtn
+    Left = 792
+    Top = 109
+    Width = 75
+    Height = 25
+    Caption = 'BitBtn2'
+    TabOrder = 9
+    OnClick = BitBtn2Click
+  end
+  object edtHL2Color: TEdit
+    Left = 210
+    Top = 191
+    Width = 75
+    Height = 21
+    TabOrder = 10
+  end
+  object edtHL2X: TEdit
+    Left = 291
+    Top = 191
+    Width = 75
+    Height = 21
+    TabOrder = 11
+  end
+  object edtHL2Y: TEdit
+    Left = 372
+    Top = 191
+    Width = 75
+    Height = 21
+    TabOrder = 12
+  end
+  object SetarHL2: TBitBtn
+    Left = 586
+    Top = 189
+    Width = 75
+    Height = 25
+    Caption = 'Setar'
+    TabOrder = 13
+    OnClick = SetarHL2Click
+  end
+  object edtHL1Tecla: TEdit
+    Left = 453
+    Top = 111
+    Width = 75
+    Height = 21
+    TabOrder = 14
+  end
+  object edtHL2Tecla: TEdit
+    Left = 453
+    Top = 191
+    Width = 75
+    Height = 21
+    TabOrder = 15
+  end
+  object edtHM1Color: TEdit
+    Left = 210
+    Top = 287
+    Width = 75
+    Height = 21
+    TabOrder = 16
+  end
+  object edtHM1X: TEdit
+    Left = 291
+    Top = 287
+    Width = 75
+    Height = 21
+    TabOrder = 17
+  end
+  object edtHM1Y: TEdit
+    Left = 372
+    Top = 287
+    Width = 75
+    Height = 21
+    TabOrder = 18
+  end
+  object btnSetarHM1: TBitBtn
+    Left = 586
+    Top = 285
+    Width = 75
+    Height = 25
+    Caption = 'Setar'
+    TabOrder = 19
+    OnClick = btnSetarHM1Click
+  end
+  object edtHM1Tecla: TEdit
+    Left = 453
+    Top = 287
+    Width = 75
+    Height = 21
+    TabOrder = 20
+  end
+  object edtUtito: TEdit
+    Left = 32
+    Top = 407
+    Width = 75
+    Height = 21
+    TabOrder = 21
+  end
+  object edtM2: TEdit
+    Left = 113
+    Top = 407
+    Width = 75
+    Height = 21
+    TabOrder = 22
+  end
+  object edtM3: TEdit
+    Left = 194
+    Top = 407
+    Width = 75
+    Height = 21
+    TabOrder = 23
+  end
+  object edtM4: TEdit
+    Left = 275
+    Top = 407
+    Width = 75
+    Height = 21
+    TabOrder = 24
+  end
+  object edtM5: TEdit
+    Left = 362
+    Top = 407
+    Width = 75
+    Height = 21
+    TabOrder = 25
+  end
+  object edtAtk: TEdit
+    Left = 443
+    Top = 407
+    Width = 75
+    Height = 21
+    TabOrder = 26
+  end
+  object btnGravar: TBitBtn
+    Left = 736
+    Top = 383
+    Width = 131
+    Height = 25
+    Caption = 'Gravar Informa'#231#245'es'
+    TabOrder = 27
+    OnClick = btnGravarClick
+  end
+  object chkAtivoHL1: TCheckBox
+    Left = 269
+    Top = 69
+    Width = 97
+    Height = 17
+    Caption = 'Ativo'
+    TabOrder = 28
+    OnClick = chkAtivoClick
+  end
+  object chkAtivoHL2: TCheckBox
+    Left = 269
+    Top = 149
+    Width = 97
+    Height = 17
+    Caption = 'Ativo'
+    TabOrder = 29
+    OnClick = chkAtivoClick
+  end
+  object chkAtivoHM1: TCheckBox
+    Left = 275
+    Top = 245
+    Width = 97
+    Height = 17
+    Caption = 'Ativo'
+    TabOrder = 30
+    OnClick = chkAtivoClick
+  end
+  object chkAtivoMagias: TCheckBox
+    Left = 114
+    Top = 360
+    Width = 97
+    Height = 17
+    Caption = 'Ativo'
+    TabOrder = 31
+    OnClick = chkAtivoClick
+  end
+  object edtLootX: TEdit
+    Left = 32
+    Top = 487
+    Width = 75
+    Height = 21
+    TabOrder = 32
+  end
+  object edtLootY: TEdit
+    Left = 113
+    Top = 487
+    Width = 75
+    Height = 21
+    TabOrder = 33
+  end
+  object chkLoot: TCheckBox
+    Left = 114
+    Top = 464
+    Width = 97
+    Height = 17
+    Caption = 'Ativo'
+    TabOrder = 34
+    OnClick = chkAtivoClick
+  end
+  object btnSetarLoot: TBitBtn
+    Left = 210
+    Top = 487
+    Width = 75
+    Height = 25
+    Caption = 'Setar'
+    TabOrder = 35
+    OnClick = btnSetarLootClick
+  end
+  object Timer1: TTimer
+    Interval = 500
+    OnTimer = Timer1Timer
+    Left = 152
+    Top = 16
+  end
+  object Timer2: TTimer
+    Enabled = False
+    OnTimer = Timer2Timer
+    Left = 456
+    Top = 16
+  end
+  object tmrMagias: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = tmrMagiasTimer
+    Left = 552
+    Top = 392
+  end
+  object tmrUtito: TTimer
+    Enabled = False
+    Interval = 9500
+    OnTimer = tmrUtitoTimer
+    Left = 552
+    Top = 456
+  end
+  object tmrAtk: TTimer
+    Enabled = False
+    Interval = 3000
+    OnTimer = tmrAtkTimer
+    Left = 328
+    Top = 472
+  end
+end

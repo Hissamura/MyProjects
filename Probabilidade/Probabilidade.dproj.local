@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/06/14 16:19:47.000.422,=D:\Programas\Delphi\Delphi 10.3\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/06/14 20:43:46.000.632,D:\Programas\Delphi\Projetos\Probabilidade\unPrincipal.pas=D:\Programas\Delphi\Delphi 10.3\Projetos\Unit1.pas</Transaction>
+    <Transaction>2021/06/14 20:43:46.000.632,D:\Programas\Delphi\Projetos\Probabilidade\unPrincipal.dfm=D:\Programas\Delphi\Delphi 10.3\Projetos\Unit1.dfm</Transaction>
+    <Transaction>2021/06/14 20:43:57.000.849,D:\Programas\Delphi\Projetos\Probabilidade\Probabilidade.dproj=D:\Programas\Delphi\Delphi 10.3\Projetos\Project2.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,406 @@
+unit unPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons, IniFiles;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Timer1: TTimer;
+    SetarHL1: TBitBtn;
+    Timer2: TTimer;
+    Label1: TLabel;
+    edtHL1Color: TEdit;
+    Color: TLabel;
+    Label2: TLabel;
+    edtHL1X: TEdit;
+    Label3: TLabel;
+    edtHL1Y: TEdit;
+    chkAtivo: TCheckBox;
+    BitBtn1: TBitBtn;
+    edtGameWindow: TEdit;
+    lblGameWindow: TLabel;
+    Edit1: TEdit;
+    BitBtn2: TBitBtn;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    edtHL2Color: TEdit;
+    edtHL2X: TEdit;
+    edtHL2Y: TEdit;
+    Label8: TLabel;
+    SetarHL2: TBitBtn;
+    Label9: TLabel;
+    edtHL1Tecla: TEdit;
+    edtHL2Tecla: TEdit;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    edtHM1Color: TEdit;
+    edtHM1X: TEdit;
+    edtHM1Y: TEdit;
+    Label14: TLabel;
+    btnSetarHM1: TBitBtn;
+    edtHM1Tecla: TEdit;
+    Label15: TLabel;
+    edtUtito: TEdit;
+    edtM2: TEdit;
+    edtM3: TEdit;
+    edtM4: TEdit;
+    edtM5: TEdit;
+    edtAtk: TEdit;
+    Label16: TLabel;
+    btnGravar: TBitBtn;
+    tmrMagias: TTimer;
+    chkAtivoHL1: TCheckBox;
+    chkAtivoHL2: TCheckBox;
+    chkAtivoHM1: TCheckBox;
+    chkAtivoMagias: TCheckBox;
+    tmrUtito: TTimer;
+    edtLootX: TEdit;
+    edtLootY: TEdit;
+    Label17: TLabel;
+    chkLoot: TCheckBox;
+    btnSetarLoot: TBitBtn;
+    tmrAtk: TTimer;
+    Label18: TLabel;
+    Label19: TLabel;
+    chkLogTeclas: TCheckBox;
+    procedure Timer1Timer(Sender: TObject);
+    procedure SetarHL1Click(Sender: TObject);
+    procedure Timer2Timer(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure SetarHL2Click(Sender: TObject);
+    procedure btnSetarHM1Click(Sender: TObject);
+    procedure btnGravarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure tmrMagiasTimer(Sender: TObject);
+    procedure chkAtivoClick(Sender: TObject);
+    procedure tmrUtitoTimer(Sender: TObject);
+    procedure btnSetarLootClick(Sender: TObject);
+    procedure tmrAtkTimer(Sender: TObject);
+  private
+    { Private declarations }
+    vpsQualSetar : string;
+    vgiMagia : Integer;
+  public
+    { Public declarations }
+    vliTempo : integer;
+    function DesktopColor(const X, Y: Integer): TColor;
+    procedure ApertaTecla(pliCodTecla : Integer);
+    procedure MiddleButton(pliX, pliY : integer);
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+{ TForm1 }
+
+procedure TForm1.ApertaTecla(pliCodTecla : Integer);
+var
+  h: HWND;
+begin
+  h := FindWindow(nil, PWideChar(edtGameWindow.text));  // acha a janela do tibia
+
+  SendMessage(h, WM_KEYdown, pliCodTecla, 0);   //pressiona a tecla
+
+  SendMessage(h, WM_KEYUP, pliCodTecla, 0);  //solta tecla
+
+  if chkLogTeclas.Checked then
+    Memo1.Lines.Add('Tecla: ' + IntToStr(pliCodTecla));
+
+end;
+
+procedure TForm1.BitBtn2Click(Sender: TObject);
+begin
+
+  //Edit1.Text := VarToStr(DesktopColor(StrToInt(edtSSAX.text), StrToInt(edtSSAY.text)));
+
+end;
+
+procedure TForm1.btnGravarClick(Sender: TObject);
+var
+  ArquivoINI: TIniFile;
+begin
+  ArquivoINI := TIniFile.Create('D:\Programas\Delphi\Projetos\MacroTibia\Configuracao.ini');
+  ArquivoINI.WriteString('HL1', 'HL1Color', edtHL1Color.Text);
+  ArquivoINI.WriteString('HL1', 'HL1X', edtHL1X.Text);
+  ArquivoINI.WriteString('HL1', 'HL1Y', edtHL1Y.Text);
+  ArquivoINI.WriteString('HL1', 'HL1Tecla', edtHL1Tecla.Text);
+
+  ArquivoINI.WriteString('HL2', 'HL2Color', edtHL2Color.Text);
+  ArquivoINI.WriteString('HL2', 'HL2X', edtHL2X.Text);
+  ArquivoINI.WriteString('HL2', 'HL2Y', edtHL2Y.Text);
+  ArquivoINI.WriteString('HL2', 'HL2Tecla', edtHL2Tecla.Text);
+
+  ArquivoINI.WriteString('HM1', 'HM1Color', edtHM1Color.Text);
+  ArquivoINI.WriteString('HM1', 'HM1X', edtHM1X.Text);
+  ArquivoINI.WriteString('HM1', 'HM1Y', edtHM1Y.Text);
+  ArquivoINI.WriteString('HM1', 'HM1Tecla', edtHM1Tecla.Text);
+
+  ArquivoINI.WriteString('MAGIAS', 'M1', edtUtito.Text);
+  ArquivoINI.WriteString('MAGIAS', 'M2', edtM2.Text);
+  ArquivoINI.WriteString('MAGIAS', 'M3', edtM3.Text);
+  ArquivoINI.WriteString('MAGIAS', 'M4', edtM4.Text);
+  ArquivoINI.WriteString('MAGIAS', 'M5', edtM5.Text);
+  ArquivoINI.WriteString('MAGIAS', 'M6', edtAtk.Text);
+
+  ArquivoINI.WriteString('Loot', 'LootX', edtLootX.Text);
+  ArquivoINI.WriteString('Loot', 'LootY', edtLootY.Text);
+
+  ArquivoINI.WriteString('Janela', 'Nome', edtGameWindow.Text);
+
+  ArquivoINI.Free;
+  ShowMessage('Mensagem armazenada com sucesso!');
+end;
+
+procedure TForm1.btnSetarHM1Click(Sender: TObject);
+begin
+  vpsQualSetar := 'HM1';
+
+  vliTempo := 5;
+
+  timer2.Enabled := true;
+end;
+
+procedure TForm1.btnSetarLootClick(Sender: TObject);
+begin
+  vpsQualSetar := 'Loot';
+
+  vliTempo := 5;
+
+  timer2.Enabled := true;
+end;
+
+procedure TForm1.chkAtivoClick(Sender: TObject);
+begin
+
+  vgiMagia := 1;
+
+  tmrUtito.Enabled := chkAtivo.Checked;
+
+  tmrMagias.Enabled := chkAtivo.Checked;
+
+  tmrAtk.Enabled := chkAtivo.Checked;
+  //Timer1.Enabled := chkAtivo.Checked;
+
+end;
+
+procedure TForm1.SetarHL1Click(Sender: TObject);
+var
+  pt: TPoint;
+begin
+
+  vpsQualSetar := 'HL1';
+
+  vliTempo := 5;
+
+  timer2.Enabled := true;
+
+end;
+
+procedure TForm1.SetarHL2Click(Sender: TObject);
+begin
+  vpsQualSetar := 'HL2';
+
+  vliTempo := 5;
+
+  timer2.Enabled := true;
+end;
+
+function TForm1.DesktopColor(const X, Y: Integer): TColor;
+var
+  c: TCanvas;
+begin
+  c := TCanvas.Create;
+  try
+    c.Handle := GetWindowDC(GetActiveWindow);
+    Result   := GetPixel(c.Handle, X, Y);
+  finally
+    c.Free;
+  end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+  ArquivoINI: TIniFile;
+begin
+
+  vgiMagia := 1;
+
+  ArquivoINI := TIniFile.Create('D:\Programas\Delphi\Projetos\MacroTibia\Configuracao.ini');
+
+  edtHL1Color.Text := ArquivoINI.ReadString('HL1', 'HL1Color', '');
+  edtHL1X.Text := ArquivoINI.ReadString('HL1', 'HL1X', '');
+  edtHL1Y.Text := ArquivoINI.ReadString('HL1', 'HL1Y', '');
+  edtHL1Tecla.Text := ArquivoINI.ReadString('HL1', 'HL1Tecla', '');
+
+  edtHL2Color.Text := ArquivoINI.ReadString('HL2', 'HL2Color', '');
+  edtHL2X.Text := ArquivoINI.ReadString('HL2', 'HL2X', '');
+  edtHL2Y.Text := ArquivoINI.ReadString('HL2', 'HL2Y', '');
+  edtHL2Tecla.Text := ArquivoINI.ReadString('HL2', 'HL2Tecla', '');
+
+  edtHM1Color.Text := ArquivoINI.ReadString('HM1', 'HM1Color', '');
+  edtHM1X.Text := ArquivoINI.ReadString('HM1', 'HM1X', '');
+  edtHM1Y.Text := ArquivoINI.ReadString('HM1', 'HM1Y', '');
+  edtHM1Tecla.Text := ArquivoINI.ReadString('HM1', 'HM1Tecla', '');
+
+  edtUtito.Text := ArquivoINI.ReadString('MAGIAS', 'M1', '');
+  edtM2.Text := ArquivoINI.ReadString('MAGIAS', 'M2', '');
+  edtM3.Text := ArquivoINI.ReadString('MAGIAS', 'M3', '');
+  edtM4.Text := ArquivoINI.ReadString('MAGIAS', 'M4', '');
+  edtM5.Text := ArquivoINI.ReadString('MAGIAS', 'M5', '');
+  edtAtk.Text := ArquivoINI.ReadString('MAGIAS', 'M6', '');
+
+  edtLootX.Text := ArquivoINI.ReadString('Loot', 'LootX', '');
+  edtLootY.Text := ArquivoINI.ReadString('Loot', 'LootY', '');
+
+  edtGameWindow.Text := ArquivoINI.ReadString('Janela', 'Nome', '');
+
+  ArquivoINI.Free;
+end;
+
+procedure TForm1.MiddleButton(pliX, pliY : integer);
+begin
+  Mouse_Event(MOUSEEVENTF_ABSOLUTE or MOUSEEVENTF_MIDDLEDOWN, pliX, pliY, 0, 0);
+  Mouse_Event(MOUSEEVENTF_ABSOLUTE or MOUSEEVENTF_MIDDLEUP, pliX, pliY, 0, 0);
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+var
+  pt: TPoint;
+begin
+
+  //GetCursorPos(pt); // Pega a posição atual do mouse;
+  //Mostra os valores das coordenadas do mouse
+  //Memo1.Lines.Add('X: ' + inttostr(pt.x) + ' | Y: ' + IntToStr(pt.Y));
+  //Memo1.Lines.Add(VarToStr(DesktopColor(pt.x, pt.y)));
+
+  if chkAtivo.checked then
+  begin
+
+    //Edit1.Text := VarToStr(DesktopColor(StrToInt(edtSSAX.text), StrToInt(edtSSAY.text)));
+
+    if (chkAtivoHL2.Checked) and
+      (VarToStr(DesktopColor(StrToInt(edtHL2X.text), StrToInt(edtHL2Y.text))) <> edtHL2Color.text) then
+      ApertaTecla(StrToInt(edtHL2Tecla.text))
+    else
+    if (chkAtivoHM1.Checked) and
+      (VarToStr(DesktopColor(StrToInt(edtHM1X.text), StrToInt(edtHM1Y.text))) <> edtHM1Color.text) then
+      ApertaTecla(StrToInt(edtHM1Tecla.text));
+
+    if (chkAtivoHL1.Checked) and
+      (VarToStr(DesktopColor(StrToInt(edtHL1X.text), StrToInt(edtHL1Y.text))) <> edtHL1Color.text) then
+      ApertaTecla(StrToInt(edtHL1Tecla.text));
+
+  end;
+
+end;
+
+procedure TForm1.Timer2Timer(Sender: TObject);
+var
+  pt: TPoint;
+begin
+
+  Label1.Caption := 'Setar local do mouse em ' +  IntToStr(vliTempo);
+
+  vliTempo := vliTempo -1;
+
+  if vliTempo = 0 then
+  begin
+    GetCursorPos(pt); // Pega a posição atual do mouse;
+    //Mostra os valores das coordenadas do mouse
+
+    if vpsQualSetar = 'HL1' then
+    begin
+      edtHL1Color.Text := VarToStr(DesktopColor(pt.x, pt.y));
+      edtHL1X.text := inttostr(pt.x);
+      edtHL1Y.text := inttostr(pt.y);
+      timer2.Enabled := false;
+    end
+    else
+    if vpsQualSetar = 'HL2' then
+    begin
+      edtHL2Color.Text := VarToStr(DesktopColor(pt.x, pt.y));
+      edtHL2X.text := inttostr(pt.x);
+      edtHL2Y.text := inttostr(pt.y);
+      timer2.Enabled := false;
+    end
+    else
+    if vpsQualSetar = 'HM1' then
+    begin
+      edtHM1Color.Text := VarToStr(DesktopColor(pt.x, pt.y));
+      edtHM1X.text := inttostr(pt.x);
+      edtHM1Y.text := inttostr(pt.y);
+      timer2.Enabled := false;
+    end
+    else
+    if vpsQualSetar = 'Loot' then
+    begin
+      edtLootX.text := inttostr(pt.x);
+      edtLootY.text := inttostr(pt.y);
+      timer2.Enabled := false;
+    end
+  end;
+
+end;
+
+procedure TForm1.tmrAtkTimer(Sender: TObject);
+begin
+  if (chkAtivoMagias.Checked) then
+    ApertaTecla(StrToInt(edtAtk.text));
+end;
+
+procedure TForm1.tmrMagiasTimer(Sender: TObject);
+begin
+
+  if (chkAtivoMagias.Checked) then
+  begin
+    if vgiMagia = 1 then
+    begin
+      ApertaTecla(StrToInt(edtM2.text));
+      vgiMagia := vgiMagia + 1;
+    end
+    else
+    if vgiMagia = 2 then
+    begin
+      ApertaTecla(StrToInt(edtM3.text));
+      vgiMagia := vgiMagia + 1;
+    end
+    else
+    if vgiMagia = 3 then
+    begin
+      ApertaTecla(StrToInt(edtM4.text));
+      vgiMagia := vgiMagia + 1;
+    end
+    else
+    if vgiMagia = 4 then
+    begin
+      ApertaTecla(StrToInt(edtM5.text));
+      vgiMagia := 1;
+    end;
+  end;
+
+end;
+
+procedure TForm1.tmrUtitoTimer(Sender: TObject);
+begin
+
+  if (chkAtivoMagias.Checked) then
+    ApertaTecla(StrToInt(edtUtito.text));
+
+  if (chkLoot.Checked) then
+    MiddleButton(StrToInt(edtLootx.text), StrToInt(edtLootY.text));
+
+end;
+
+end.

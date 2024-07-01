@@ -1,0 +1,858 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 608
+  ClientWidth = 1081
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 1081
+    Height = 591
+    ActivePage = TabSheet1
+    Align = alClient
+    TabOrder = 0
+    ExplicitHeight = 595
+    object TabSheet1: TTabSheet
+      Caption = 'TabSheet1'
+      ExplicitHeight = 567
+      object Panel1: TPanel
+        Left = 0
+        Top = 0
+        Width = 1073
+        Height = 129
+        Align = alTop
+        TabOrder = 0
+        object edtURL: TEdit
+          Left = 16
+          Top = 15
+          Width = 753
+          Height = 21
+          TabOrder = 0
+          Text = 'https://fundamentus.com.br/resultado.php'
+        end
+        object btnExtrair: TBitBtn
+          Left = 886
+          Top = 36
+          Width = 75
+          Height = 25
+          Caption = 'Extrair'
+          TabOrder = 1
+          OnClick = btnExtrairClick
+        end
+        object BitBtn1: TBitBtn
+          Left = 792
+          Top = 5
+          Width = 75
+          Height = 25
+          Caption = 'Baixar'
+          TabOrder = 2
+          OnClick = BitBtn1Click
+        end
+        object edtCaminho: TEdit
+          Left = 16
+          Top = 42
+          Width = 753
+          Height = 21
+          TabOrder = 3
+          Text = 'D:\Programas\Delphi\Projetos\Acoes\Acoes'
+        end
+        object btnCarregar: TBitBtn
+          Left = 792
+          Top = 36
+          Width = 75
+          Height = 25
+          Caption = 'Carregar'
+          TabOrder = 4
+          OnClick = btnCarregarClick
+        end
+        object btnGravar: TBitBtn
+          Left = 886
+          Top = 5
+          Width = 75
+          Height = 25
+          Caption = 'Gravar'
+          TabOrder = 5
+          OnClick = btnGravarClick
+        end
+        object edtLinkAcao: TEdit
+          Left = 16
+          Top = 71
+          Width = 337
+          Height = 21
+          TabOrder = 6
+          Text = 'https://fundamentus.com.br/detalhes.php?papel='
+        end
+        object btnDetalhes: TBitBtn
+          Left = 376
+          Top = 69
+          Width = 75
+          Height = 25
+          Caption = 'Detalhes'
+          TabOrder = 7
+          OnClick = btnDetalhesClick
+        end
+        object edtCotacoes: TEdit
+          Left = 16
+          Top = 102
+          Width = 337
+          Height = 21
+          TabOrder = 8
+          Text = 'https://www.google.com/search?q='
+        end
+        object btnCotacoes: TBitBtn
+          Left = 376
+          Top = 100
+          Width = 75
+          Height = 25
+          Caption = 'Cota'#231#245'es'
+          TabOrder = 9
+          OnClick = btnCotacoesClick
+        end
+      end
+      object Panel2: TPanel
+        Left = 0
+        Top = 249
+        Width = 1073
+        Height = 314
+        Align = alClient
+        TabOrder = 1
+        ExplicitHeight = 318
+        object DBGrid1: TDBGrid
+          Left = 1
+          Top = 1
+          Width = 1071
+          Height = 312
+          Align = alClient
+          DataSource = dsrIndicadores
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'ID'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'IDPapel'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'CodPapel'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'LPA'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'VPA'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Margem_Bruta'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'EBIT_Ativo'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Liquidez_Corr'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Giro_Ativos'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DataUltCot'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'VolMed2Meses'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Cotacao'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PrecoLucro'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PrecoVlrPratinomial'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PrecoReceitaLiquida'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Div_Yield'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PrecoAtivo'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PrecoCapGiro'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PrecoEBIT'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PrecoAtivCircLiq'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'EVEbit'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'EVEBITIDA'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'MrgEbit'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'MargLiq'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'LiqCorrente'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'ROIC'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'ROE'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Liq2Meses'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'PatrimLiq'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DivBrutaPatrimLiq'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'CrescRec5a'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Arquivo'
+              Width = 500
+              Visible = True
+            end>
+        end
+      end
+      object Panel6: TPanel
+        Left = 0
+        Top = 129
+        Width = 1073
+        Height = 120
+        Align = alTop
+        Caption = 'Panel6'
+        TabOrder = 2
+        object Memo1: TMemo
+          Left = 1
+          Top = 1
+          Width = 536
+          Height = 118
+          Align = alLeft
+          Lines.Strings = (
+            'Memo1')
+          TabOrder = 0
+        end
+        object Memo2: TMemo
+          Left = 537
+          Top = 1
+          Width = 535
+          Height = 118
+          Align = alClient
+          Lines.Strings = (
+            'Memo2')
+          TabOrder = 1
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'TabSheet2'
+      ImageIndex = 1
+      ExplicitHeight = 567
+      object Panel3: TPanel
+        Left = 0
+        Top = 0
+        Width = 1073
+        Height = 563
+        Align = alClient
+        TabOrder = 0
+        ExplicitHeight = 567
+        object Panel4: TPanel
+          Left = 1
+          Top = 1
+          Width = 1071
+          Height = 88
+          Align = alTop
+          TabOrder = 0
+        end
+        object Panel5: TPanel
+          Left = 1
+          Top = 89
+          Width = 1071
+          Height = 473
+          Align = alClient
+          TabOrder = 1
+          ExplicitHeight = 477
+        end
+      end
+    end
+  end
+  object ProgressBar1: TProgressBar
+    Left = 0
+    Top = 591
+    Width = 1081
+    Height = 17
+    Align = alBottom
+    TabOrder = 1
+    ExplicitTop = 595
+  end
+  object qryIndicadores: TZQuery
+    Connection = ZConnection1
+    UpdateObject = uptIndicadores
+    CachedUpdates = True
+    SQL.Strings = (
+      'select * from indicadores'
+      'where arquivo =:Arquivo')
+    Params = <
+      item
+        DataType = ftUnknown
+        Name = 'Arquivo'
+        ParamType = ptUnknown
+      end>
+    Left = 760
+    Top = 136
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'Arquivo'
+        ParamType = ptUnknown
+      end>
+    object qryIndicadoresID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object qryIndicadoresIDPapel: TIntegerField
+      FieldName = 'IDPapel'
+      Required = True
+    end
+    object qryIndicadoresDataImportacao: TDateTimeField
+      FieldName = 'DataImportacao'
+    end
+    object qryIndicadoresCodPapel: TWideStringField
+      FieldName = 'CodPapel'
+      Size = 10
+    end
+    object qryIndicadoresCotacao: TFloatField
+      FieldName = 'Cotacao'
+    end
+    object qryIndicadoresPrecoLucro: TFloatField
+      FieldName = 'PrecoLucro'
+    end
+    object qryIndicadoresPrecoVlrPratinomial: TFloatField
+      FieldName = 'PrecoVlrPratinomial'
+    end
+    object qryIndicadoresPrecoReceitaLiquida: TFloatField
+      FieldName = 'PrecoReceitaLiquida'
+    end
+    object qryIndicadoresDiv_Yield: TFloatField
+      FieldName = 'Div_Yield'
+    end
+    object qryIndicadoresPrecoAtivo: TFloatField
+      FieldName = 'PrecoAtivo'
+    end
+    object qryIndicadoresPrecoCapGiro: TFloatField
+      FieldName = 'PrecoCapGiro'
+    end
+    object qryIndicadoresPrecoEBIT: TFloatField
+      FieldName = 'PrecoEBIT'
+    end
+    object qryIndicadoresPrecoAtivCircLiq: TFloatField
+      FieldName = 'PrecoAtivCircLiq'
+    end
+    object qryIndicadoresEVEbit: TFloatField
+      FieldName = 'EVEbit'
+    end
+    object qryIndicadoresEVEBITIDA: TFloatField
+      FieldName = 'EVEBITIDA'
+    end
+    object qryIndicadoresMrgEbit: TFloatField
+      FieldName = 'MrgEbit'
+    end
+    object qryIndicadoresMargLiq: TFloatField
+      FieldName = 'MargLiq'
+    end
+    object qryIndicadoresLiqCorrente: TFloatField
+      FieldName = 'LiqCorrente'
+    end
+    object qryIndicadoresROIC: TFloatField
+      FieldName = 'ROIC'
+    end
+    object qryIndicadoresROE: TFloatField
+      FieldName = 'ROE'
+    end
+    object qryIndicadoresLiq2Meses: TFloatField
+      FieldName = 'Liq2Meses'
+    end
+    object qryIndicadoresPatrimLiq: TFloatField
+      FieldName = 'PatrimLiq'
+    end
+    object qryIndicadoresDivBrutaPatrimLiq: TFloatField
+      FieldName = 'DivBrutaPatrimLiq'
+    end
+    object qryIndicadoresCrescRec5a: TFloatField
+      FieldName = 'CrescRec5a'
+    end
+    object qryIndicadoresArquivo: TWideStringField
+      FieldName = 'Arquivo'
+      Size = 200
+    end
+    object qryIndicadoresLPA: TFloatField
+      FieldName = 'LPA'
+    end
+    object qryIndicadoresVPA: TFloatField
+      FieldName = 'VPA'
+    end
+    object qryIndicadoresMargem_Bruta: TFloatField
+      FieldName = 'Margem_Bruta'
+    end
+    object qryIndicadoresEBIT_Ativo: TFloatField
+      FieldName = 'EBIT_Ativo'
+    end
+    object qryIndicadoresLiquidez_Corr: TFloatField
+      FieldName = 'Liquidez_Corr'
+    end
+    object qryIndicadoresGiro_Ativos: TFloatField
+      FieldName = 'Giro_Ativos'
+    end
+    object qryIndicadoresDataUltCot: TDateTimeField
+      FieldName = 'DataUltCot'
+    end
+    object qryIndicadoresVolMed2Meses: TFloatField
+      FieldName = 'VolMed2Meses'
+    end
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF16
+    AutoEncodeStrings = True
+    Catalog = ''
+    Properties.Strings = (
+      'controls_cp=CP_UTF16'
+      'AutoEncodeStrings=True')
+    Connected = True
+    HostName = 'DESKTOP-CFNAEAA'
+    Port = 0
+    Database = 'AnaliseAcoes'
+    User = 'sa'
+    Password = '121421'
+    Protocol = 'mssql'
+    Left = 760
+    Top = 304
+  end
+  object dsrIndicadores: TDataSource
+    DataSet = qryIndicadores
+    Left = 760
+    Top = 184
+  end
+  object DlgArquivo: TOpenTextFileDialog
+    InitialDir = 'D:\Programas\Delphi\Projetos\Acoes\Acoes'
+    Left = 960
+    Top = 144
+  end
+  object qryPapeis: TZQuery
+    Connection = ZConnection1
+    UpdateObject = uptPapeis
+    SQL.Strings = (
+      'select * from Papeis')
+    Params = <>
+    Left = 864
+    Top = 136
+    object qryPapeisID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object qryPapeisCodigo: TWideStringField
+      FieldName = 'Codigo'
+      Required = True
+      Size = 10
+    end
+    object qryPapeisDescricao: TWideStringField
+      FieldName = 'Descricao'
+      Size = 250
+    end
+  end
+  object dsrPapeis: TDataSource
+    Left = 864
+    Top = 184
+  end
+  object uptIndicadores: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM indicadores'
+      'WHERE'
+      '  indicadores.ID = :OLD_ID')
+    InsertSQL.Strings = (
+      'INSERT INTO indicadores'
+      
+        '  (ID, DataImportacao, Arquivo, IDPapel, CodPapel, Cotacao, Prec' +
+        'oLucro, '
+      
+        '   PrecoVlrPratinomial, PrecoReceitaLiquida, Div_Yield, PrecoAti' +
+        'vo, PrecoCapGiro, '
+      
+        '   PrecoEBIT, PrecoAtivCircLiq, EVEbit, EVEBITIDA, MrgEbit, Marg' +
+        'Liq, LiqCorrente, '
+      
+        '   ROIC, ROE, Liq2Meses, PatrimLiq, DivBrutaPatrimLiq, CrescRec5' +
+        'a, LPA, '
+      
+        '   VPA, Margem_Bruta, EBIT_Ativo, Liquidez_Corr, Giro_Ativos, Da' +
+        'taUltCot, '
+      '   VolMed2Meses)'
+      'VALUES'
+      
+        '  (:ID, :DataImportacao, :Arquivo, :IDPapel, :CodPapel, :Cotacao' +
+        ', :PrecoLucro, '
+      
+        '   :PrecoVlrPratinomial, :PrecoReceitaLiquida, :Div_Yield, :Prec' +
+        'oAtivo, '
+      
+        '   :PrecoCapGiro, :PrecoEBIT, :PrecoAtivCircLiq, :EVEbit, :EVEBI' +
+        'TIDA, :MrgEbit, '
+      
+        '   :MargLiq, :LiqCorrente, :ROIC, :ROE, :Liq2Meses, :PatrimLiq, ' +
+        ':DivBrutaPatrimLiq, '
+      
+        '   :CrescRec5a, :LPA, :VPA, :Margem_Bruta, :EBIT_Ativo, :Liquide' +
+        'z_Corr, '
+      '   :Giro_Ativos, :DataUltCot, :VolMed2Meses)')
+    ModifySQL.Strings = (
+      'UPDATE indicadores SET'
+      '  ID = :ID,'
+      '  DataImportacao = :DataImportacao,'
+      '  Arquivo = :Arquivo,'
+      '  IDPapel = :IDPapel,'
+      '  CodPapel = :CodPapel,'
+      '  Cotacao = :Cotacao,'
+      '  PrecoLucro = :PrecoLucro,'
+      '  PrecoVlrPratinomial = :PrecoVlrPratinomial,'
+      '  PrecoReceitaLiquida = :PrecoReceitaLiquida,'
+      '  Div_Yield = :Div_Yield,'
+      '  PrecoAtivo = :PrecoAtivo,'
+      '  PrecoCapGiro = :PrecoCapGiro,'
+      '  PrecoEBIT = :PrecoEBIT,'
+      '  PrecoAtivCircLiq = :PrecoAtivCircLiq,'
+      '  EVEbit = :EVEbit,'
+      '  EVEBITIDA = :EVEBITIDA,'
+      '  MrgEbit = :MrgEbit,'
+      '  MargLiq = :MargLiq,'
+      '  LiqCorrente = :LiqCorrente,'
+      '  ROIC = :ROIC,'
+      '  ROE = :ROE,'
+      '  Liq2Meses = :Liq2Meses,'
+      '  PatrimLiq = :PatrimLiq,'
+      '  DivBrutaPatrimLiq = :DivBrutaPatrimLiq,'
+      '  CrescRec5a = :CrescRec5a,'
+      '  LPA = :LPA,'
+      '  VPA = :VPA,'
+      '  Margem_Bruta = :Margem_Bruta,'
+      '  EBIT_Ativo = :EBIT_Ativo,'
+      '  Liquidez_Corr = :Liquidez_Corr,'
+      '  Giro_Ativos = :Giro_Ativos,'
+      '  DataUltCot = :DataUltCot,'
+      '  VolMed2Meses = :VolMed2Meses'
+      'WHERE'
+      '  indicadores.ID = :OLD_ID')
+    UseSequenceFieldForRefreshSQL = False
+    Left = 756
+    Top = 240
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'DataImportacao'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Arquivo'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'IDPapel'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'CodPapel'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Cotacao'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'PrecoLucro'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'PrecoVlrPratinomial'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'PrecoReceitaLiquida'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Div_Yield'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'PrecoAtivo'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'PrecoCapGiro'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'PrecoEBIT'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'PrecoAtivCircLiq'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'EVEbit'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'EVEBITIDA'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'MrgEbit'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'MargLiq'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'LiqCorrente'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'ROIC'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'ROE'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Liq2Meses'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'PatrimLiq'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'DivBrutaPatrimLiq'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'CrescRec5a'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'LPA'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'VPA'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Margem_Bruta'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'EBIT_Ativo'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Liquidez_Corr'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Giro_Ativos'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'DataUltCot'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'VolMed2Meses'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object uptPapeis: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM Papeis'
+      'WHERE'
+      '  Papeis.ID = :OLD_ID')
+    InsertSQL.Strings = (
+      'INSERT INTO Papeis'
+      '  (ID, Codigo, Descricao)'
+      'VALUES'
+      '  (:ID, :Codigo, :Descricao)')
+    ModifySQL.Strings = (
+      'UPDATE Papeis SET'
+      '  ID = :ID,'
+      '  Codigo = :Codigo,'
+      '  Descricao = :Descricao'
+      'WHERE'
+      '  Papeis.ID = :OLD_ID')
+    UseSequenceFieldForRefreshSQL = False
+    Left = 868
+    Top = 240
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'ID'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Codigo'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'Descricao'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryPesquisa: TZReadOnlyQuery
+    Connection = ZConnection1
+    Params = <>
+    Left = 884
+    Top = 328
+  end
+end

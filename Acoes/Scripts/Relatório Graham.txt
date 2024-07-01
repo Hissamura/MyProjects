@@ -1,0 +1,32 @@
+
+
+
+Select 
+ROW_NUMBER() OVER(ORDER BY ISNULL(volume,0) DESC) AS RankingVolume, 
+ROW_NUMBER() OVER(ORDER BY PotencialValorizacao DESC) AS RakingValorizacao,
+ROW_NUMBER() OVER(ORDER BY Div_Yield DESC) AS RakingYield,
+ROW_NUMBER() OVER(ORDER BY ISNULL(volume,0) DESC) +
+ROW_NUMBER() OVER(ORDER BY PotencialValorizacao DESC)+
+ROW_NUMBER() OVER(ORDER BY Div_Yield DESC)AS RakingVolumeValorizacaoYield,
+* from (
+select CodPapel, 
+Cast(Cotacao as decimal(20,2)) Cotacao, 
+Cast(SQRT(22.5 * LPA * VPA) as decimal(20,2)) GRAHAM, 
+Cast(SQRT(22.5 * LPA * VPA) / cotacao * 100 as decimal(20,2)) PotencialValorizacao,
+Cast(VolMed2Meses as decimal (20,2)) Volume,
+Div_Yield
+from indicadores
+where 22.5 * LPA * VPA > 0 and SQRT(22.5 * LPA * VPA) > (cotacao * 1.5) and LPA > 0 and DataUltCot >= '20210701'
+and Arquivo = (select top 1 Arquivo from Indicadores order by id desc)
+and ISNULL(VolMed2Meses,0) > 50000000
+)Z
+order by 4
+
+
+
+select ROW_NUMBER() OVER(ORDER BY PotencialLavorizacao DESC) AS Ranking, * from (
+select CodPapel, Cast(Cotacao as decimal(20,2)) Cotacao, Cast(SQRT(22.5 * LPA * VPA) as decimal(20,2)) GRAHAM, Cast(SQRT(22.5 * LPA * VPA) / cotacao * 100 as decimal(20,2)) PotencialLavorizacao from indicadores
+where 22.5 * LPA * VPA > 0 and SQRT(22.5 * LPA * VPA) > (cotacao * 1.5) and LPA > 0 and DataUltCot >= '20210701'
+and Arquivo = 'D:\Programas\Delphi\Projetos\Acoes\Acoes\20210701 231509.txt'
+
+)Z
